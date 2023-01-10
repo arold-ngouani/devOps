@@ -31,4 +31,7 @@ let myDate = () => {
   return myFullDate;
 }
 
-let paragraphe = document.getElementById('date_p').innerHTML = myDate();
+setInterval(()=>{
+  document.getElementById('date_p').innerHTML = myDate();
+}, 1000);
+
