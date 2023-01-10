@@ -9,20 +9,8 @@ let myDate = () => {
   let sec = time.getSeconds();
 
   let tranformDate = () => {
-    if(month < 10) {
-      month = "0" + month;
-    }
-    if(hour < 10) {
-      hour = "0" + hour;
-    }
-
-    if(sec < 10) {
-      sec = "0" + sec;
-    }
-    if(min < 10) {
-      min = "0" + min;
-    }
-
+    let monArray = [month, hour, min, sec]
+    monArray.forEach(x => x < 10 ? x = "0" + x : x);
   }
 
   tranformDate()
@@ -30,6 +18,7 @@ let myDate = () => {
   let myFullDate = "Le " + day + "/" + month + "/" + year + "  " + hour + ":" + min + ":" + sec;
   return myFullDate;
 }
+
 
 setInterval(()=>{
   document.getElementById('date_p').innerHTML = myDate();
